@@ -1,0 +1,110 @@
+/* ST Message Time - theme-following styles.
+   Uses SillyTavern SmartTheme variables. No specific custom theme is required. */
+
+/* Normal / non-bubble themes: the time sits under the message. */
+body.st-message-time-ready #chat .mes[is_system="false"] > .mes_block,
+body.st-message-time-ready #chat .mes[is_system="true"][is_user]:not(.smallSysMes) > .mes_block {
+    position: relative;
+}
+
+body.st-message-time-ready #chat .mes[is_system="false"] .st-mtime,
+body.st-message-time-ready #chat .mes[is_system="true"][is_user]:not(.smallSysMes) .st-mtime {
+    display: block;
+    width: fit-content;
+    margin-top: 3px;
+    color: var(--SmartThemeUnderlineColor, currentColor);
+    font-size: 0.68em;
+    font-weight: 400;
+    line-height: 1.15;
+    white-space: nowrap;
+    opacity: 0.76;
+    pointer-events: none;
+}
+
+body.st-message-time-ready #chat .mes[is_system="false"][is_user="false"] .st-mtime,
+body.st-message-time-ready #chat .mes[is_system="true"][is_user="false"]:not(.smallSysMes) .st-mtime {
+    margin-right: auto;
+}
+
+body.st-message-time-ready #chat .mes[is_system="false"][is_user="true"] .st-mtime,
+body.st-message-time-ready #chat .mes[is_system="true"][is_user="true"]:not(.smallSysMes) .st-mtime {
+    margin-left: auto;
+}
+
+/* Bubble-chat mode: the time sits beside the bubble and replaces the built-in timestamp. */
+body.st-message-time-ready.bubblechat #chat .mes[is_system="false"] .ch_name .timestamp,
+body.st-message-time-ready.bubblechat #chat .mes[is_system="false"] .ch_name .timestamp-icon,
+body.st-message-time-ready.bubblechat #chat .mes[is_system="true"][is_user]:not(.smallSysMes) .ch_name .timestamp,
+body.st-message-time-ready.bubblechat #chat .mes[is_system="true"][is_user]:not(.smallSysMes) .ch_name .timestamp-icon {
+    display: none !important;
+}
+
+body.st-message-time-ready.bubblechat #chat .mes[is_system="false"] .st-mtime,
+body.st-message-time-ready.bubblechat #chat .mes[is_system="true"][is_user]:not(.smallSysMes) .st-mtime {
+    position: absolute;
+    bottom: 2px;
+    margin: 0;
+}
+
+body.st-message-time-ready.bubblechat #chat .mes[is_system="false"][is_user="false"] .st-mtime,
+body.st-message-time-ready.bubblechat #chat .mes[is_system="true"][is_user="false"]:not(.smallSysMes) .st-mtime {
+    left: calc(100% + 8px);
+    right: auto;
+}
+
+body.st-message-time-ready.bubblechat #chat .mes[is_system="false"][is_user="true"] .st-mtime,
+body.st-message-time-ready.bubblechat #chat .mes[is_system="true"][is_user="true"]:not(.smallSysMes) .st-mtime {
+    right: calc(100% + 8px);
+    left: auto;
+}
+
+/* Date divider above the first message of each day. */
+body.st-message-time-ready #chat .mes[is_system="false"].st-mtime-new-day,
+body.st-message-time-ready #chat .mes[is_system="true"][is_user]:not(.smallSysMes).st-mtime-new-day {
+    position: relative !important;
+    padding-top: 38px !important;
+}
+
+body.st-message-time-ready #chat .mes[is_system="false"].st-mtime-new-day::before,
+body.st-message-time-ready #chat .mes[is_system="true"][is_user]:not(.smallSysMes).st-mtime-new-day::before {
+    content: attr(data-st-mtime-date);
+    position: absolute;
+    z-index: 1;
+    top: 11px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: var(--SmartThemeUnderlineColor, currentColor);
+    font-size: 0.72em;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 0.82;
+    pointer-events: none;
+}
+
+/* ST Message Meta 1.3 and older draws its own time on the same message; where it
+   has, leave this extension's copy out so the time is not shown twice. (Its date
+   divider uses the same ::before, so that one never doubles.) */
+body.st-message-time-ready #chat .mes .mes_block:has(> .st-msg-time) > .st-mtime {
+    display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+    body.st-message-time-ready #chat .mes[is_system="false"] .st-mtime,
+    body.st-message-time-ready #chat .mes[is_system="true"][is_user]:not(.smallSysMes) .st-mtime {
+        font-size: 0.64em;
+    }
+
+    body.st-message-time-ready #chat .mes[is_system="false"].st-mtime-new-day,
+    body.st-message-time-ready #chat .mes[is_system="true"][is_user]:not(.smallSysMes).st-mtime-new-day {
+        padding-top: 36px !important;
+    }
+
+    body.st-message-time-ready #chat .mes[is_system="false"].st-mtime-new-day::before,
+    body.st-message-time-ready #chat .mes[is_system="true"][is_user]:not(.smallSysMes).st-mtime-new-day::before {
+        top: 10px;
+        font-size: 0.69em;
+    }
+}

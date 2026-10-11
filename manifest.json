@@ -1,0 +1,12 @@
+{
+    "display_name": "ST Message Time",
+    "loading_order": 10,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "STLoft",
+    "version": "1.0.0",
+    "homePage": "https://github.com/STLoft/ST-Message-Time",
+    "auto_update": true
+}
