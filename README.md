@@ -21,9 +21,3 @@ https://github.com/STLoft/Message-Time
 ```
 
 설치 후 페이지를 새로 고칩니다.
-
-## Message Meta와 함께 쓸 때
-
-메시지별 토큰 사용량 팝업은 [Message Meta](https://github.com/STLoft/Message-Meta)가 맡습니다. 두 확장은 따로 써도, 함께 써도 됩니다.
-
-Message Meta 1.3 이하에는 시간과 날짜 구분선이 들어 있었습니다. 그 버전과 함께 켜져 있으면 두 번 나오지 않도록 이 확장 쪽 표시를 숨기지만, Message Meta를 1.4 이상으로 업데이트하는 것을 권합니다.
