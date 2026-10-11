@@ -1,11 +1,11 @@
 (() => {
     'use strict';
 
-    const VERSION = '1.0.0';
-    const READY_CLASS = 'st-message-time-ready';
-    const TIME_CLASS = 'st-mtime';
-    const DAY_CLASS = 'st-mtime-new-day';
-    const DAY_LABEL_ATTR = 'data-st-mtime-date';
+    const VERSION = '1.1.0';
+    const READY_CLASS = 'message-time-ready';
+    const TIME_CLASS = 'msg-time';
+    const DAY_CLASS = 'msg-time-new-day';
+    const DAY_LABEL_ATTR = 'data-msg-time-date';
 
     let chatObserver = null;
     let renderTimer = 0;
@@ -180,7 +180,7 @@
         attachSillyTavernEvents();
         decorateMessages();
 
-        console.info(`[ST Message Time] v${VERSION} loaded`);
+        console.info(`[Message Time] v${VERSION} loaded`);
         return true;
     }
 
